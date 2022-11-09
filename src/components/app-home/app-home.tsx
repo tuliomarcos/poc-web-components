@@ -1,23 +1,53 @@
-import { Component, h } from '@stencil/core';
+import { Component, h, State } from '@stencil/core';
+
+type ComponentInfos = {
+	id: number,
+	url: string,
+	name: string,
+}[]
 
 @Component({
-  tag: 'app-home',
-  styleUrl: 'app-home.css',
-  shadow: true,
+	tag: 'app-home',
+	styleUrl: 'app-home.css',
+	shadow: true,
 })
-export class AppHome {
-  render() {
-    return (
-      <div class="app-home">
-        <p>
-          Welcome to the Stencil App Starter. You can use this starter to build entire apps all with web components using Stencil! Check out our docs on{' '}
-          <a href="https://stenciljs.com">stenciljs.com</a> to get started.
-        </p>
 
-        <stencil-route-link url="/profile/stencil">
-          <button>Profile page</button>
-        </stencil-route-link>
-      </div>
-    );
-  }
+export class AppHome {
+	@State() components: ComponentInfos = [
+		{
+			id: 0,
+			url: '/button',
+			name: 'Botão',
+		},
+		{
+			id: 1,
+			url: '/input',
+			name: 'Input Text',
+		},
+		{
+			id: 2,
+			url: '/dropdown',
+			name: 'Dropdown',
+		},
+	]
+
+	render() {
+		return (
+			<div class="app-home">
+				<p>
+					Bem vindo ao nosso Design System, abaixo temos alguns links para redirecionar para alguns dos nossos exemplos de componentes:
+				</p>
+
+				<ul>
+					{this.components.map((component) =>
+						<li>
+							<stencil-route-link url={component.url}>
+								{component.name}
+							</stencil-route-link>
+						</li>
+					)}
+				</ul>
+			</div>
+		);
+	}
 }

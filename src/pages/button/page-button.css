@@ -1,0 +1,12 @@
+.page-button {
+	padding: 40px;
+	color: #333;
+}
+
+.page-button__item > * {
+	margin-right: 32px;
+}
+
+.page-button__item > h4 {
+	margin-bottom: 12px;
+}
