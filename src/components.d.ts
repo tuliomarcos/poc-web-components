@@ -17,7 +17,6 @@ export namespace Components {
     interface PageButton {
     }
     interface RiButton {
-        "className": string;
         "disabled": boolean;
         "label": string;
         "size": string;
@@ -92,9 +91,9 @@ declare namespace LocalJSX {
     interface PageButton {
     }
     interface RiButton {
-        "className"?: string;
         "disabled"?: boolean;
-        "label"?: string;
+        "label": string;
+        "onClickEmitter"?: (event: CustomEvent<any>) => void;
         "size"?: string;
         "type"?: string;
     }
