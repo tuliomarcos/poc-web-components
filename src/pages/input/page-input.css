@@ -1,0 +1,9 @@
+.page-input {
+  padding: 40px;
+	color: #333;
+}
+
+.page-input > * {
+  display: flex;
+  flex-direction: column;
+}
