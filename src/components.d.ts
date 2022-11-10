@@ -16,6 +16,8 @@ export namespace Components {
     }
     interface PageButton {
     }
+    interface PageDropdown {
+    }
     interface PageInput {
     }
     interface RiButton {
@@ -25,6 +27,9 @@ export namespace Components {
         "type": string;
     }
     interface RiDropdown {
+        "label": string;
+        "name": string;
+        "values": any;
     }
     interface RiInput {
         "autocomplete": string;
@@ -61,6 +66,12 @@ declare global {
         prototype: HTMLPageButtonElement;
         new (): HTMLPageButtonElement;
     };
+    interface HTMLPageDropdownElement extends Components.PageDropdown, HTMLStencilElement {
+    }
+    var HTMLPageDropdownElement: {
+        prototype: HTMLPageDropdownElement;
+        new (): HTMLPageDropdownElement;
+    };
     interface HTMLPageInputElement extends Components.PageInput, HTMLStencilElement {
     }
     var HTMLPageInputElement: {
@@ -90,6 +101,7 @@ declare global {
         "app-profile": HTMLAppProfileElement;
         "app-root": HTMLAppRootElement;
         "page-button": HTMLPageButtonElement;
+        "page-dropdown": HTMLPageDropdownElement;
         "page-input": HTMLPageInputElement;
         "ri-button": HTMLRiButtonElement;
         "ri-dropdown": HTMLRiDropdownElement;
@@ -106,6 +118,8 @@ declare namespace LocalJSX {
     }
     interface PageButton {
     }
+    interface PageDropdown {
+    }
     interface PageInput {
     }
     interface RiButton {
@@ -116,6 +130,10 @@ declare namespace LocalJSX {
         "type"?: string;
     }
     interface RiDropdown {
+        "label"?: string;
+        "name"?: string;
+        "onChangeEmitter"?: (event: CustomEvent<any>) => void;
+        "values"?: any;
     }
     interface RiInput {
         "autocomplete"?: string;
@@ -132,6 +150,7 @@ declare namespace LocalJSX {
         "app-profile": AppProfile;
         "app-root": AppRoot;
         "page-button": PageButton;
+        "page-dropdown": PageDropdown;
         "page-input": PageInput;
         "ri-button": RiButton;
         "ri-dropdown": RiDropdown;
@@ -146,6 +165,7 @@ declare module "@stencil/core" {
             "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
             "page-button": LocalJSX.PageButton & JSXBase.HTMLAttributes<HTMLPageButtonElement>;
+            "page-dropdown": LocalJSX.PageDropdown & JSXBase.HTMLAttributes<HTMLPageDropdownElement>;
             "page-input": LocalJSX.PageInput & JSXBase.HTMLAttributes<HTMLPageInputElement>;
             "ri-button": LocalJSX.RiButton & JSXBase.HTMLAttributes<HTMLRiButtonElement>;
             "ri-dropdown": LocalJSX.RiDropdown & JSXBase.HTMLAttributes<HTMLRiDropdownElement>;

@@ -3,7 +3,7 @@ import { Component, h, Prop, Event, EventEmitter } from '@stencil/core';
 @Component({
 	tag: 'ri-button',
 	styleUrl: 'button.css',
-	shadow: true,
+	shadow: false,
 })
 
 export class RiButton {

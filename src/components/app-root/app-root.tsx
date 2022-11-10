@@ -22,7 +22,7 @@ export class AppRoot {
               <stencil-route url="/" component="app-home" exact={true} />
               <stencil-route url="/button" component="page-button" exact={true} />
               <stencil-route url="/input" component="page-input" exact={true} />
-              <stencil-route url="/dropdown" component="ri-dropdown" exact={true} />
+              <stencil-route url="/dropdown" component="page-dropdown" exact={true} />
               <stencil-route url="/profile/:name" component="app-profile" />
             </stencil-route-switch>
           </stencil-router>

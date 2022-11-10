@@ -1,0 +1,9 @@
+.page-dropdown {
+  padding: 40px;
+	color: #333;
+}
+
+.page-dropdown > * {
+  display: flex;
+  flex-direction: column;
+}
